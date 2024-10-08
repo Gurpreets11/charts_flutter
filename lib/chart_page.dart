@@ -2,6 +2,7 @@
 import 'dart:math';
 
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChartPage extends StatefulWidget {
@@ -13,8 +14,8 @@ class ChartPage extends StatefulWidget {
 
 class _ChartPageState extends State<ChartPage> {
 
-  late List<charts.Series> seriesList;
-
+  //late List<charts.Series> seriesList;
+  late final List<charts.Series<dynamic, String>> seriesList;
   static List<charts.Series<Sales, String>> _createRandomData() {
     final random = Random();
 
@@ -99,7 +100,8 @@ class _ChartPageState extends State<ChartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Chart Demo"),
+        title: const Text("Chart Demo", style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.black87,
       ),
       body: Container(
         padding: EdgeInsets.all(20.0),
